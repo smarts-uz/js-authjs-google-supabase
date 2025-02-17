@@ -2,6 +2,7 @@ import Appbar from "./components/Appbar";
 import Providers from "./components/Providers";
 import "./globals.css";
 import { Inter } from "next/font/google";
+import Script from "next/script";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -17,6 +18,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <Script
+        src="https://yastatic.net/s3/passport-sdk/autofill/v1/sdk-suggest-with-polyfills-latest.js"
+        strategy="lazyOnload"
+      />
       <body className={inter.className}>
         <Providers>{children}</Providers>
       </body>
